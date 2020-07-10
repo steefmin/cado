@@ -36,10 +36,10 @@
         />
     </b-field>
     <div class="buttons">
-      <b-button type="is-success" icon-left="check" @click="save">Save</b-button>
+      <b-button type="is-success" icon-left="check" @click="save()">Save</b-button>
       <b-button type="is-info" icon-left="share" @click="isLinkActive = true" :disabled="isLinkButtonDisabled">Share link</b-button>
-      <b-button type="is-info" icon-left="qrcode" @click="isQrCodeActive = true" :disabled="isQrCodeButtonDisabled">Create QR-code</b-button>
-      <b-button type="is-danger" icon-left="redo" @click="clear">Clear form</b-button>
+      <b-button type="is-info" icon-left="qrcode" @click="save(); isQrCodeActive = true" :disabled="isQrCodeButtonDisabled">Create QR-code</b-button>
+      <b-button type="is-danger" icon-left="redo" @click="clear()">Clear form</b-button>
     </div>
     <b-message auto-close title="Link" type="is-success" has-icon :active.sync="isLinkActive"
                aria-close-label="Close message" :duration=10000
