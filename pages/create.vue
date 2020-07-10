@@ -44,13 +44,13 @@
     <b-message auto-close title="Link" type="is-success" has-icon :active.sync="isLinkActive"
                aria-close-label="Close message" :duration=10000
     >
-      <a :href="getPayloadLink('')" target="_blank">{{ getPayloadLink('') }}</a>
+      <a :href="getPayloadLink()" target="_blank">{{ getPayloadLink() }}</a>
     </b-message>
     <b-message title="QR-Code" type="is-success" :active.sync="isQrCodeActive"
                aria-close-label="Close message"
     >
       <nuxt-link to="viewQR">
-        <qrcode-vue :value="getPayloadLink('/viewQR')" :size="size()" level="H"></qrcode-vue>
+        <qrcode-vue :value="getPayloadLink()" :size="size()" level="H"></qrcode-vue>
         Click the QRcode to view in a separate page
       </nuxt-link>
 
@@ -141,8 +141,8 @@
         const payload = JSON.stringify(this.payload)
         return `?payload=${btoa(payload)}`
       },
-      getPayloadLink(route) {
-        return `${window.location.origin}${route}/${this.query()}`
+      getPayloadLink() {
+        return `${window.location.origin}/${this.query()}`
       },
       size() {
         return window.innerWidth * 0.2
