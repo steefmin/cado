@@ -11,7 +11,7 @@
     "generate": "nuxt build; nuxt export"
   },
   "dependencies": {
-    "nuxt": "^2.13.0",
+    "nuxt": "^2.14.5",
     "nuxt-buefy": "^0.3.31",
     "qrcode.vue": "^1.7.0"
   },
